@@ -1,4 +1,6 @@
-FROM imvu/alpine-ghc-base:7.10
+FROM imvu/alpine-ghc-base:7.10.3
+
+COPY stack.yaml /root/.stack/global-project/stack.yaml
 
 RUN : "Layer 3: install stack" && \
     apk --update add sqlite-dev gmp-dev alpine-sdk xz curl file gmp openssh openssl zlib-dev strace autoconf pcre-dev ncurses-dev && \
