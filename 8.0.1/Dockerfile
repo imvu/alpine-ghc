@@ -1,7 +1,7 @@
 FROM imvu/alpine-ghc-base:8.0.1
 
 RUN : "Layer 3: install stack" && \
-    apk --update add sqlite-dev gmp-dev alpine-sdk xz curl file gmp openssh openssl zlib-dev strace autoconf pcre-dev ncurses-dev && \
+    apk --update add sqlite-dev gmp-dev alpine-sdk xz curl file gmp openssh openssl zlib-dev strace autoconf pcre-dev ncurses-dev libcap-dev && \
     cabal update && \
     cabal install --global stack && \
     stack setup && \
